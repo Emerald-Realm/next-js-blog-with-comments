@@ -1,3 +1,18 @@
+.Hero {
+    background-color: red;
+    background-image: url('../media/pexels-christina-morillo-1181738.jpg');
+    /* font-family: 'Niconne', cursive; */
+}
+
+.section {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+* {
+    font-family: 'Dosis', sans-serif;
+}
+
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
@@ -7,4 +22,3 @@ article a {
 }
 /* purgecss end ignore */
 @tailwind utilities;
-

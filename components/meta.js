@@ -21,7 +21,7 @@ export default function Meta() {
         sizes="16x16"
         href="/favicon/favicon-16x16.png"
       />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
+      {/* <link rel="manifest" href="/favicon/site.webmanifest" /> */}
       <link
         rel="mask-icon"
         href="/favicon/safari-pinned-tab.svg"
@@ -31,6 +31,10 @@ export default function Meta() {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"></link>
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
