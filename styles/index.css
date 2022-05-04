@@ -5,8 +5,16 @@
 }
 
 .section {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    padding: 0.8rem;
+}
+
+@media screen and (min-width:768px) {
+    .section {
+        padding: 4rem;
+    }
 }
 
 * {
