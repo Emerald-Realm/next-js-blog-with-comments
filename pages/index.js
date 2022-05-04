@@ -9,6 +9,7 @@ import { getAllAuthors } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import { urlObjectKeys } from 'next/dist/shared/lib/utils'
+import { imageBuilder } from '../lib/sanity'
 
 
 export default function Index({ allPosts, preview, categories, authors }) {
@@ -51,56 +52,46 @@ export default function Index({ allPosts, preview, categories, authors }) {
               <button className='px-4 py-2 w-40 bg-black font-semi-bold text-white text-lg'>Get started</button>
             </div>
           </div>
+
+
           {/* features - a lifestyle blog, covering 1.fashion 2.Eating 3.Ettiqute etiquette 4.Self help*/}
-          <div className='features section flex flex-col gap-4'>
+          <div className='features section flex flex-col p-4 gap-4'>
             {
               categories.map((category) =>
-                <div className='category-template' key={category._id}>
-                  <p className='link'>{category.title}</p>
+                <div className='category-template shadow py-20 px-2 text-center ' key={category._id}
+                 style={{backgroundImage: `url(${imageBuilder(category.image).url()})`,
+                  backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                  {/* <img className='category-image' src={imageBuilder(category.image).width(200).url()} /> */}
+                  <p className='link text-2xl font-bold text-blue-300'>{category.title}</p>
                 </div>
               )
             }
             {/* card layout in flex, card formart - image on text(link) at the center & underlined on hover */}
           </div>
-          {/* quote fullscreen section with quote tag and attachment */}
-          <div className='quote section'>
-            <blockquote>I'm a man of simple tastes. I'm always satisfied with the best.</blockquote>
-            <p>― Oscar Wilde</p>
+
+          {/* https://huemint.com/website-monochrome/#palette=ffffff-df9610
+           quote fullscreen section with quote tag and attachment */}
+          <div className='quote section bg-amber-500 text-center p-8'>
+            <blockquote className='text-white'>I'm a man of simple tastes. I'm always satisfied with the best.</blockquote>
+            <p className='text-amber-900'>― Oscar Wilde</p>
           </div>
+
+
           {/* featured posts - title + featured cards*/}
-          <div className='featured section'>
+          <div className='featured section p-4'>
             <h2>Featured Posts</h2>
             <div>
               {/* import featured lists | create template - image + title + author & stats  */}
-              <div>
-                <img src='#' />
-                <h4>Happiness is a choice</h4>
-                <div className='blog info'>
-                  <div className='author'>
-                    <img src='#' />
-                    <p>Elonmusk</p>
-                  </div>
-                  <p>on today's date</p>
-                </div>
-              </div>
+              {morePosts.length > 0 && <MoreStories posts={morePosts} />}
             </div>
           </div>
+
           {/* Recent posts */}
           <div className='recent section'>
             <h2>Checkout Our Recent Posts</h2>
             <div>
               {/* import recent lists | create template - image + title + author & stats  */}
-              <div>
-                <img src='#' />
-                <h4>Happiness is a choice</h4>
-                <div className='blog info'>
-                  <div className='author'>
-                    <img src='#' />
-                    <p>Elonmusk</p>
-                  </div>
-                  <p>on today's date</p>
-                </div>
-              </div>
+             
             </div>
           </div>
           {/* About us */}
